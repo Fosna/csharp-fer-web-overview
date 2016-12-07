@@ -29,4 +29,9 @@ $(document).ready(function () {
             submitChildForm($btn);
         }
     });
+
+
+    // Init data table if exists.
+    $(".table").DataTable();
+
 });

@@ -1,11 +1,12 @@
 {
   "name": "asp.net",
   "private": true,
-  "dependencies": {
-    "bootstrap": "3.3.7",
-    "bootswatch": "3.3.7+2",
-    "jquery": "2.2.0",
-    "jquery-validation": "1.14.0",
-    "jquery-validation-unobtrusive": "3.2.6"
-  }
+    "dependencies": {
+        "bootstrap": "3.3.7",
+        "bootswatch": "3.3.7+2",
+        "datatables": "1.10.12",
+        "jquery": "2.2.0",
+        "jquery-validation": "1.14.0",
+        "jquery-validation-unobtrusive": "3.2.6"
+    }
 }
