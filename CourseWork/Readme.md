@@ -48,4 +48,6 @@ Use test method on student controller to get number of students in a database. I
 
 2.9 Introduce client side validation as well.
 
+2.10 Be able to add student.
+
 

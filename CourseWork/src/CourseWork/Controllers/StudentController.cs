@@ -71,5 +71,25 @@ namespace CourseWork.Controllers
 
             return RedirectToAction(nameof(Details), new { id = editMe.Id });
         }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(Student createMe)
+        {
+            if (ModelState.IsValid == false)
+            {
+                return View(createMe);
+            }
+
+            _dbContext.Students.Add(createMe);
+            _dbContext.SaveChanges();
+
+            return RedirectToAction(nameof(Details), new { id = createMe.Id });
+        }
+
     }
 }
