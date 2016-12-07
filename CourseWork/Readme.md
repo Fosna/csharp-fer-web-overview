@@ -51,3 +51,9 @@ Use test method on student controller to get number of students in a database. I
 2.10 Be able to add student.
 
 
+#### 3. Manage courses
+
+3.1. Seed database with courses. Show list and course details.
+
+
+

@@ -26,5 +26,12 @@ namespace CourseWork.Models
         [Display(Name = "Student Code")]
         public string StudentCode { get; set; }
 
+        public IList<Course> Courses { get; set; }
+
+        public Student()
+        {
+            Courses = new List<Course>();
+        }
+
     }
 }

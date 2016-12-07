@@ -13,7 +13,8 @@ namespace CourseWork.Models.Db
     public class CourseWorkDbContext : DbContext
     {
         public IDbSet<Student> Students { get; set; }
-        
+        public IDbSet<Course> Courses { get; set; }
+
         // Inject hosting environment to check if in development or production environment.
         public CourseWorkDbContext(string connectionString, IHostingEnvironment env) : base(connectionString)
         {

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<CourseWork.Models.Course>
+
+<h2>Courses</h2>
+
+<div class="row">
+    <a class="btn btn-success" role="button"><i class="glyphicon glyphicon-plus"></i>Add</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var course in Model)
+            {
+                <tr>
+                    <td>@course.Name</td>
+                    <td class="text-right">
+                        <a class="btn btn-default btn-sm" asp-action="Details" asp-route-id="@course.Id" title="Course details"><i class="glyphicon glyphicon-info-sign"></i></a>
+                        <a class="btn btn-warning btn-sm" title="Edit course"><i class="glyphicon glyphicon-pencil"></i></a>
+                        <a class="btn btn-danger btn-sm" title="Remove course"><i class="glyphicon glyphicon-remove"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

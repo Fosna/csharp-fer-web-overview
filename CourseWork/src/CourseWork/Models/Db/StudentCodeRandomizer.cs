@@ -19,16 +19,16 @@ namespace CourseWork.Models.Db
         private const int MIN_RAND_NUM = 1000;
         private const int MAX_RAND_NUM = 100000;
 
-        private readonly Random _numberRandomizer;
+        private readonly SequenceGeneratorInt32 _numberRandomizer;
 
         public StudentCodeRandomizer()
         {
-            _numberRandomizer = new Random();
+            _numberRandomizer = new SequenceGeneratorInt32();
         }
 
         public string GetValue()
         {
-            var val = _numberRandomizer.Next(MIN_RAND_NUM, MAX_RAND_NUM).ToString().PadLeft(5, '0');
+            var val = _numberRandomizer.GetValue().ToString().PadLeft(5, '0');
             return val;
         }
     }
