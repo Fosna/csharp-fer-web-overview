@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CourseWork.Models.Db;
+using CourseWork.Models;
 
 namespace CourseWork.Controllers
 {
@@ -23,11 +24,22 @@ namespace CourseWork.Controllers
             return View(students);
         }
 
-        public IActionResult Monkey()
+        [HttpPost]
+        public IActionResult Remove(int id)
         {
-            // Test student seed procedure. 
-            var val = _dbContext.Students.Count();
-            return Content(val.ToString());
+
+            var deleteMe = _dbContext.Students.Single(x => x.Id == id);
+            _dbContext.Students.Remove(deleteMe);
+            _dbContext.SaveChanges();
+
+            return RedirectToAction("Index", "Message", new MessageVm
+            {
+                Message = "Student is removed.",
+                ReturnAction = "Index",
+                ReturnController = "Student"
+            });
+
         }
+
     }
 }

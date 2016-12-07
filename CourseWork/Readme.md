@@ -36,5 +36,7 @@ Look how wwwroot/lib folder grows...
 Consider manually deleting database if seed doesn't work.
 Use test method on student controller to get number of students in a database. Idea is to check if students really exist in Students table in database.
 
-2.4 Create student list view
+2.4 Create student list view.
+
+2.5 Remove student from database. Use POST request. Respond with message on success.
 
