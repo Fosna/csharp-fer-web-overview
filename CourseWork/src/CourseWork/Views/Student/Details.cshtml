@@ -16,7 +16,7 @@
 </div>
 <div>
     <a class="btn btn-default" asp-action="Index" title="Back to list">List</a>
-    <a class="btn btn-warning" title="Edit student">Edit</a>
+    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model.Id" title="Edit student">Edit</a>
     @*When changing data use POST HTTP request*@
     <a class="btn btn-danger btn-remove-student cw-post-link" href="#" title="Remove student" data-confirm-text="Are you sure you want to remove the student?">
         Remove

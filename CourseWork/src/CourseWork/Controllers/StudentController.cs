@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CourseWork.Models.Db;
 using CourseWork.Models;
+using System.Data.Entity;
 
 namespace CourseWork.Controllers
 {
@@ -48,5 +49,22 @@ namespace CourseWork.Controllers
             return View(student);
         }
 
+
+        public ActionResult Edit(int id)
+        {
+            var student = _dbContext.Students.Single(x => x.Id == id);
+
+            return View(student);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Student editMe)
+        {
+            _dbContext.Students.Attach(editMe);
+            _dbContext.Entry(editMe).State = EntityState.Modified;
+            _dbContext.SaveChanges();
+
+            return RedirectToAction(nameof(Details), new { id = editMe.Id });
+        }
     }
 }
