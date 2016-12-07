@@ -24,3 +24,7 @@ Look how wwwroot/lib folder grows...
 1.7 Add same links to navigation bar.
 
 
+
+#### 2 Manage students
+
+2.1 Add student controller and placeholder page. Make sure that controller and view are wired up nicely.
