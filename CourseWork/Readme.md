@@ -28,3 +28,11 @@ Look how wwwroot/lib folder grows...
 #### 2 Manage students
 
 2.1 Add student controller and placeholder page. Make sure that controller and view are wired up nicely.
+
+2.2 Hook up Entity Framework 6 (not EF Core!). Make sure database can be reached.
+
+2.3. Add random students to the database. Use seed database.
+
+Consider manually deleting database if seed doesn't work.
+Use test method on student controller to get number of students in a database. Idea is to check if students really exist in Students table in database.
+

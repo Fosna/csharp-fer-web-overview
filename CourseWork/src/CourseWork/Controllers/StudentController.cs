@@ -23,10 +23,8 @@ namespace CourseWork.Controllers
 
         public IActionResult Monkey()
         {
-            // Test database access. 
-            var val = _dbContext.Database.SqlQuery<int>("select 1").ToList().First();
-
-            // 1 should be displayed on screen at url: Student/Monkey
+            // Test student seed procedure. 
+            var val = _dbContext.Students.Count();
             return Content(val.ToString());
         }
     }
