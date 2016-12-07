@@ -9,6 +9,7 @@
 <div>
     @*Workaround to have buttons in line.*@
     <a class="btn btn-default" asp-action="Index" title="Back to list">List</a>
+    <a class="btn btn-default" asp-action="Index" asp-controller="Enrollment" asp-route-courseId="@Model.Id" title="View or edit students">Students</a>
     <a class="btn btn-warning" title="Edit course">Edit</a>
     <a class="btn btn-danger" title="Remove course">Remove</a>
 </div>

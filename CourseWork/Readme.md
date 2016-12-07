@@ -57,3 +57,7 @@ Use test method on student controller to get number of students in a database. I
 
 
 
+#### 4. Enroll students to a course
+
+4.1. Seed dabase with course enrollments. Show list of students enrolled in course.
+
