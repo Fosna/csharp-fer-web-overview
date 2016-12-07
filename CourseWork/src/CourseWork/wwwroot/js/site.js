@@ -1,4 +1,11 @@
-﻿$(document).ready(function () {
+﻿
+$(document).ready(function () {
+
+    // Submit form inside link element.
+    function submitChildForm($btn) {
+        var $frmRemoveStudent = $btn.children("form");
+        $frmRemoveStudent.submit();
+    }
 
     // Support posting to server when clicking to link
     $("a.cw-post-link").click(function () {
@@ -9,12 +16,17 @@
         // Get data-confirm-text attribute value.
         var confirmText = $btn.data("confirm-text");
 
-        // Present user with a choice.
-        if (confirm(confirmText)) {
+        // If confirm text was suplied.
+        if (confirmText) {
 
-            // Submit form inside link element.
-            var $frmRemoveStudent = $(this).children("form");
-            $frmRemoveStudent.submit();
+            // Present user with a choice.
+            if (confirm(confirmText)) {
+                submitChildForm($btn);
+            }
+        }
+        // Submit form without confirmation
+        else {
+            submitChildForm($btn);
         }
     });
 });

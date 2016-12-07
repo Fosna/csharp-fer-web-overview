@@ -33,12 +33,14 @@ namespace CourseWork.Controllers
             _dbContext.Students.Remove(deleteMe);
             _dbContext.SaveChanges();
 
-            return RedirectToAction("Index", "Message", new MessageVm
-            {
-                Message = "Student is removed.",
-                ReturnAction = "Index",
-                ReturnController = "Student"
-            });
+            return RedirectToAction("Index", "Message", 
+                MessageVm.Create(
+                    urlService: Url,
+                    message: "Student is removed.",
+                    returnAction: "Index",
+                    returnController: "Student"
+                )
+            );
 
         }
 

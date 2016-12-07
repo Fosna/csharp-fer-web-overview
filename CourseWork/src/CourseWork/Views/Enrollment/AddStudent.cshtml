@@ -1,10 +1,9 @@
 ﻿@model CourseWork.Models.Course
 
-<h2>@Model.Name </h2>
-<h3>Enrolled Students</h3>
+<h2>@Model.Name</h2>
+<h3>Add Student to Course</h3>
 
 <div class="row">
-    <a class="btn btn-success" asp-action="AddStudent" asp-route-courseId="@Model.Id" role="button"><i class="glyphicon glyphicon-plus"></i> Add</a>
     <table class="table">
         <thead>
             <tr>
@@ -22,8 +21,12 @@
                     <td>@student.LastName</td>
                     <td>@student.StudentCode</td>
                     <td>
-                        <a class="btn btn-danger btn-sm btn-remove-student" title="Remove student from course">
-                            <i class="glyphicon glyphicon-remove"></i>
+                        <a class="btn btn-success cw-post-link" title="Add student to course">
+                            <i class="glyphicon glyphicon-plus"></i>
+                            <form asp-action="AddStudent">
+                                <input type="hidden" name="courseId" value="@Model.Id" />
+                                <input type="hidden" name="studentId" value="@student.Id" />
+                            </form>
                         </a>
                     </td>
                 </tr>
@@ -32,6 +35,6 @@
     </table>
 
     <div>
-        <a class="btn btn-default" asp-action="Details" asp-controller="Course" asp-route-id="@Model.Id" title="Back to course">Back</a>
+        <a class="btn btn-default" asp-action="Index" asp-route-courseId="@Model.Id" title="Back to course students">Back</a>
     </div>
 </div>
