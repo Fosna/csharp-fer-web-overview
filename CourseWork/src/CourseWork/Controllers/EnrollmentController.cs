@@ -52,7 +52,7 @@ namespace CourseWork.Controllers
         [HttpPost]
         public ActionResult AddStudent(int courseId, int studentId)
         {
-            var course = _dbContext.Courses.Include(x => x.Students).Single(x => x.Id == courseId);
+            var course = _dbContext.Courses.Single(x => x.Id == courseId);
             var student = _dbContext.Students.Single(x => x.Id == studentId);
 
             course.Students.Add(student);
@@ -68,5 +68,26 @@ namespace CourseWork.Controllers
                 )
             );
         }
+
+        [HttpPost]
+        public ActionResult RemoveStudent(int courseId, int studentId)
+        {
+            var course = _dbContext.Courses.Single(x => x.Id == courseId);
+            var student = _dbContext.Students.Single(x => x.Id == studentId);
+
+            course.Students.Remove(student);
+            _dbContext.SaveChanges();
+
+            return RedirectToAction("Index", "Message",
+                MessageVm.Create(
+                    urlService: Url,
+                    message: "Student is removed from course.",
+                    returnAction: "Index",
+                    returnController: "Enrollment",
+                    routeValues: new { CourseId = courseId }
+                )
+            );
+        }
+
     }
 }

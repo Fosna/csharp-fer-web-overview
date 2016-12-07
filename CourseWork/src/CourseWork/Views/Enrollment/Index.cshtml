@@ -22,8 +22,12 @@
                     <td>@student.LastName</td>
                     <td>@student.StudentCode</td>
                     <td>
-                        <a class="btn btn-danger btn-sm btn-remove-student" title="Remove student from course">
+                        <a class="btn btn-danger btn-sm cw-post-link" title="Remove student from course">
                             <i class="glyphicon glyphicon-remove"></i>
+                            <form asp-action="RemoveStudent">
+                                <input type="hidden" name="courseId" value="@Model.Id" />
+                                <input type="hidden" name="studentId" value="@student.Id" />
+                            </form>
                         </a>
                     </td>
                 </tr>

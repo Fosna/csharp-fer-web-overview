@@ -53,12 +53,14 @@ Use test method on student controller to get number of students in a database. I
 
 #### 3. Manage courses
 
-3.1. Seed database with courses. Show list and course details.
+3.1 Seed database with courses. Show list and course details.
 
 
 
 #### 4. Enroll students to a course
 
-4.1. Seed dabase with course enrollments. Show list of students enrolled in course.
+4.1 Seed dabase with course enrollments. Show list of students enrolled in course.
 
-4.2. Enable adding student to course. Write nice message to user on success.
+4.2 Enable adding student to course. Write nice message to user on success.
+
+4.3 Enable removing student from course. Write nice message to user on success.
