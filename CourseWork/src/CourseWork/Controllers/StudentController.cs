@@ -60,6 +60,11 @@ namespace CourseWork.Controllers
         [HttpPost]
         public ActionResult Edit(Student editMe)
         {
+            if (ModelState.IsValid == false)
+            {
+                return View(editMe);
+            }
+
             _dbContext.Students.Attach(editMe);
             _dbContext.Entry(editMe).State = EntityState.Modified;
             _dbContext.SaveChanges();
