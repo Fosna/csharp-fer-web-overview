@@ -20,3 +20,7 @@ Look how wwwroot/lib folder grows...
 1.5 Include bootswatch theme CSS in HTML head.
 
 1.6 Put two links that look like a button on home page.
+
+1.7 Add same links to navigation bar.
+
+
