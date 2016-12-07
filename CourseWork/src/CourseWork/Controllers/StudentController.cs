@@ -18,7 +18,9 @@ namespace CourseWork.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var students = _dbContext.Students.ToList();
+
+            return View(students);
         }
 
         public IActionResult Monkey()
