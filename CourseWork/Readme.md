@@ -18,3 +18,5 @@ bower.json is visible only after all files in folder are visible. Consider using
 Look how wwwroot/lib folder grows...
 
 1.5 Include bootswatch theme CSS in HTML head.
+
+1.6 Put two links that look like a button on home page.
