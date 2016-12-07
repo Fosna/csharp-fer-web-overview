@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using CourseWork.Models.Db;
 
 namespace CourseWork
 {
@@ -27,6 +28,17 @@ namespace CourseWork
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Add entity framework database context.
+            // One object per HTTP request.
+            services.AddScoped(x =>
+            {
+                return new CourseWorkDbContext(
+                    Configuration["ConnectionStrings:DefaultConnection"],
+                    // Get hosting environment implementation from dependency injection container.
+                    x.GetService<IHostingEnvironment>()
+                );
+            });
+
             // Add framework services.
             services.AddMvc();
         }
