@@ -16,3 +16,5 @@ Use bower to add front end dependencies.
 bower.json is visible only after all files in folder are visible. Consider using file explorer to locate bower.json which is in the root of web project.
 
 Look how wwwroot/lib folder grows...
+
+1.5 Include bootswatch theme CSS in HTML head.
