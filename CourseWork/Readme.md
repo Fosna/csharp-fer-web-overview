@@ -40,3 +40,4 @@ Use test method on student controller to get number of students in a database. I
 
 2.5 Remove student from database. Use POST request. Respond with message on success.
 
+2.6 Show student details. Hook up remove student button on that page as well.

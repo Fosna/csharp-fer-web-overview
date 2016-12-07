@@ -41,5 +41,12 @@ namespace CourseWork.Controllers
 
         }
 
+        public ActionResult Details(int id)
+        {
+            var student = _dbContext.Students.Single(x => x.Id == id);
+
+            return View(student);
+        }
+
     }
 }
